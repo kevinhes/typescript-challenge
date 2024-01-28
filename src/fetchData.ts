@@ -6,4 +6,15 @@
  */
 
 // 請在下方寫下你的程式碼
+// 定義一個接口來描述我們期望的回傳資料結構
+export async function fetchData( url: string ) {
+  try {
+    const res = await fetch(url);
+    const data = res.json();
+    return data
+  } catch( error ) {
+    console.error(error);
+    return {}
+  }
 
+}
